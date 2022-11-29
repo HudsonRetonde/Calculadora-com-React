@@ -1,10 +1,12 @@
-
+import { Container, Content } from './style'
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Olá</h1>
-    </div>
+    <Container>     
+      <Content>
+      Olá, dev!  
+      </Content>      
+    </Container>
   );
 }
 
