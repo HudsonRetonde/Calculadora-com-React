@@ -9,4 +9,9 @@ export const ButtonContainer = styled.button`
     color: #FFFFFF;
     font-size: 24px;
     font-weigth: 700;
+    flex: 1;
+
+    &:hover {
+        opacity: 0.6;
+    }
 `
