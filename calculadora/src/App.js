@@ -5,9 +5,9 @@ import { Container, Content } from './style';
 const App = () => {
   return (
     <Container>     
-      <Content>
-      
+      <Content>      
       <Input/>
+      <Button/>
       </Content>      
     </Container>
   );

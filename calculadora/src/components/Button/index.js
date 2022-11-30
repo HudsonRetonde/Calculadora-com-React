@@ -1,8 +1,8 @@
+import { ButtonContainer } from './style';
+
 const Button = () => {
     return (
-      <div className="App">
-       <h1>Olá</h1>
-      </div>
+      <ButtonContainer>1</ButtonContainer>
     );
   }
   
