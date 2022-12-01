@@ -27,6 +27,17 @@ const App = () => {
     }
   }
 
+  const hundleSubNumbers = () => {
+    if (firstNumebr === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+    } else {
+      const sum = Number(firstNumebr) - Number(currentNumber);
+      setCurrentNumber(String(sum));
+    }
+  }
+
+
 
   return (
     <Container>     
@@ -45,7 +56,7 @@ const App = () => {
           <Button label="7" onClick={() => hundleAddNumber('7')}/>
           <Button label="8" onClick={() => hundleAddNumber('8')}/>
           <Button label="9" onClick={() => hundleAddNumber('9')}/>
-          <Button label="-" onClick={() => hundleAddNumber('-')}/>
+          <Button label="-" onClick={hundleSubNumbers}/>
         </Row>
         <Row>
           <Button label="4" onClick={() => hundleAddNumber('4')}/>
