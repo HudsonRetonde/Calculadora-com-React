@@ -5,13 +5,26 @@ import {useState} from 'react';
 
 
 const App = () => {
-  const [currentNumber, setCurrentNumber] = useState('');
+  const [currentNumber, setCurrentNumber] = useState('0');
+  const [firstNumebr, setFirstNumber] = useState('0');
+
   const hundleOnClear = () => {
-    setCurrentNumber('')
+    setCurrentNumber('0')
+    setFirstNumber('0')
   }
 
   const hundleAddNumber = (num) => {
-    setCurrentNumber(prev => `${num}${prev}`)
+    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
+  }
+
+  const hundleSumNumbers = () => {
+    if (firstNumebr === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+    } else {
+      const sum = Number(firstNumebr) + Number(currentNumber);
+      setCurrentNumber(String(sum));
+    }
   }
 
 
@@ -38,7 +51,7 @@ const App = () => {
           <Button label="4" onClick={() => hundleAddNumber('4')}/>
           <Button label="5" onClick={() => hundleAddNumber('5')}/>
           <Button label="6" onClick={() => hundleAddNumber('6')}/>
-          <Button label="+" onClick={() => hundleAddNumber('+')}/>
+          <Button label="+" onClick={hundleSumNumbers}/>
         </Row>
         <Row>
           <Button label="1" onClick={() => hundleAddNumber('1')}/>
