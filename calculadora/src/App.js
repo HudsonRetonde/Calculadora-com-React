@@ -47,6 +47,16 @@ const App = () => {
     }
   }
 
+  const hundleDivtNumbers = () => {
+    if (firstNumebr === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+    } else {
+      const sum = Number(firstNumebr) / Number(currentNumber);
+      setCurrentNumber(String(sum));
+    }
+  }
+
   return (
     <Container>     
       
@@ -56,7 +66,7 @@ const App = () => {
 
         <Row>
           <Button label="x" onClick={hundleMultNumbers}/>
-          <Button label="/" onClick={() => hundleAddNumber('/')}/>
+          <Button label="/" onClick={hundleDivtNumbers}/>
           <Button label="c" onClick={hundleOnClear}/>
           <Button label="#" onClick={() => hundleAddNumber('#')}/>
         </Row>
