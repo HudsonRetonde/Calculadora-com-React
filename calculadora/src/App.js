@@ -5,7 +5,11 @@ import {useState} from 'react';
 
 
 const App = () => {
-  const [currentNumber, setCurrentNumber] = useState('0');
+  const [currentNumber, setCurrentNumber] = useState('');
+  const hundleOnClear = () => {
+    setCurrentNumber('')
+  }
+
   const hundleAddNumber = (num) => {
     setCurrentNumber(prev => `${num}${prev}`)
   }
@@ -21,7 +25,7 @@ const App = () => {
         <Row>
           <Button label="x" onClick={() => hundleAddNumber('x')}/>
           <Button label="/" onClick={() => hundleAddNumber('/')}/>
-          <Button label="c" onClick={() => hundleAddNumber('c')}/>
+          <Button label="c" onClick={hundleOnClear}/>
           <Button label="#" onClick={() => hundleAddNumber('#')}/>
         </Row>
         <Row>
