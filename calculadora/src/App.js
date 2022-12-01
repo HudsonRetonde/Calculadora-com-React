@@ -37,7 +37,15 @@ const App = () => {
     }
   }
 
-
+  const hundleMultNumbers = () => {
+    if (firstNumebr === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+    } else {
+      const sum = Number(firstNumebr) * Number(currentNumber);
+      setCurrentNumber(String(sum));
+    }
+  }
 
   return (
     <Container>     
@@ -47,7 +55,7 @@ const App = () => {
         <Input value={currentNumber}/>
 
         <Row>
-          <Button label="x" onClick={() => hundleAddNumber('x')}/>
+          <Button label="x" onClick={hundleMultNumbers}/>
           <Button label="/" onClick={() => hundleAddNumber('/')}/>
           <Button label="c" onClick={hundleOnClear}/>
           <Button label="#" onClick={() => hundleAddNumber('#')}/>
